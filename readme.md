@@ -3,6 +3,10 @@ Allows creation and managing of the BMW Service History.
 
 Tested on NBT ECU only. May or may not work on CIC / NBT Evo.
 
+## Releases
+
+Check the [latest release](https://github.com/theDeniZ/ServiceManager/releases/latest) page. You will find there some binaries and release notes.
+
 ## Create and manage the history file
 
 The Service History is a file with a *.tst extension (also a `Ediabas Toolset 32` Test file). You can load an existing one or create a new file.
