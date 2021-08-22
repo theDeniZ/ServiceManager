@@ -13,6 +13,8 @@ jobs:
         uses: actions/checkout@v2-beta
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
+        with:
+          extra: '-static -ltcg'
       - name: Run QMake
         run: qmake ServiceCreator.pro
       - name: Build
