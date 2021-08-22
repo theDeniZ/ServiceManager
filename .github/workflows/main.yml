@@ -17,3 +17,9 @@ jobs:
         run: qmake ServiceCreator.pro
       - name: Build
         run: nmake debug
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: |
+            *
