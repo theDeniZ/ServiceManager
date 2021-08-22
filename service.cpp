@@ -13,7 +13,7 @@ Service::Service() {
 Service::Service(QString str) {
     QRegExp tagExp(";");
     QStringList parameterList = str.split(tagExp);
-    this->date = QDate(parameterList[2].toInt(), parameterList[0].toInt(), parameterList[1].toInt());
+    this->date = QDate(parameterList[2].toInt(), parameterList[1].toInt(), parameterList[0].toInt());
     this->milage = parameterList[4].toInt();
     this->bmw = parameterList[5].toInt() == 1;
     this->dealer = parameterList[6];
@@ -66,7 +66,7 @@ QString Service::toString() {
             listSting += ";";
         }
     }
-    return QString("%1;").arg((int)this->date.month()) + QString("%1;").arg((int)this->date.day()) + QString("%1;0;").arg((int)this->date.year()) +
+    return QString("%1;").arg((int)this->date.day()) + QString("%1;").arg((int)this->date.month()) + QString("%1;0;").arg((int)this->date.year()) +
             QString("%1;").arg(this->milage) + QString("%1;").arg(this->bmw ? 1 : 0) + this->dealer + ";" +
             QString("0x%1;").arg(this->time) + QString("%1;").arg(this->items.count()) + listSting;
 }
