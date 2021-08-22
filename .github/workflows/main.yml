@@ -14,6 +14,6 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
       - name: Run QMake
-        run: qmake preppipe.pro
+        run: qmake ServiceCreator.pro
       - name: Build
         run: nmake debug
