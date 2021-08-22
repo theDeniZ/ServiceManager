@@ -1,0 +1,19 @@
+name: Build Windows
+
+on: [push, pull_request]
+
+jobs:
+  windows:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - name: MSVC Environment Setup
+        uses: ilammy/msvc-dev-cmd@v1
+      - name: Checkout
+        uses: actions/checkout@v2-beta
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+      - name: Run QMake
+        run: qmake preppipe.pro
+      - name: Build
+        run: nmake debug
